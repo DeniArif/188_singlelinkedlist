@@ -101,3 +101,23 @@ void traverse() {
 		}
 	}
 }
+
+void searchData() {
+	if (listEmpty()) {
+		cout << "List Kosong " << endl;
+		system("pause");
+		system("cls");
+		return;
+	}
+	else {
+		int nim;
+		cout << "Masukkan nim: ";
+		cin >> nim;
+		Node* currentNode = START;
+		while (currentNode != NULL) {
+			if (currentNode->noMhs == nim) {
+				cout << "nim: " << currentNode->noMhs << ", Nama: " << currentNode->name << endl;
+				return;
+			}
+			currentNode = currentNode->next;
+		}
